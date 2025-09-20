@@ -1,0 +1,95 @@
+{
+  "questions": [
+    {
+      "placeholder": "First Name",
+      "required": true,
+      "type": "text",
+      "halfwidth": true,
+      "id": "firstName"
+    },
+    {
+      "placeholder": "Last Name",
+      "required": true,
+      "type": "text",
+      "halfwidth": true,
+      "id": "lastName"
+    },
+    {
+      "placeholder": "Email",
+      "required": true,
+      "type": "email",
+      "halfwidth": true,
+      "id": "email",
+      "disabled": true
+    },
+    {
+      "placeholder": "Mobile Number",
+      "required": true,
+      "type": "tel",
+      "halfwidth": true,
+      "id": "mobile"
+    },
+    {
+      "placeholder": "Enrollment Number / Rank",
+      "required": true,
+      "type": "tel",
+      "halfwidth": true,
+      "id": "enrollmentNo"
+    },
+    {
+      "placeholder": "dd-mm-yyyy",
+      "min": "1997-01-01",
+      "max": "2022-12-31",
+      "required": true,
+      "type": "date",
+      "halfwidth": true,
+      "id": "dob"
+    },
+    {
+      "placeholder": "Course",
+      "required": true,
+      "type": "select",
+      "halfwidth": true,
+      "id": "course",
+      "options": ["Course", "BCA", "MCA", "Other"]
+    },
+    {
+      "placeholder": "Section",
+      "required": true,
+      "type": "select",
+      "halfwidth": true,
+      "id": "section",
+      "options": [
+        "Section",
+        "1  A",
+        "1  B",
+        "1  C",
+        "1 EA",
+        "1 EB",
+        "2  A",
+        "2  B",
+        "2  C",
+        "2 EA",
+        "2 EB",
+        "3  A",
+        "3  B",
+        "3  C",
+        "3 EA",
+        "3 EB",
+        "4  A",
+        "4  B",
+        "4  C",
+        "4 EA",
+        "4 EB",
+        "5  A",
+        "5  B",
+        "5  C",
+        "5 EA",
+        "5 EB"
+      ]
+    }
+  ],
+  "errorText": "Please fill Incomplete Feilds",
+  "emailVerification": "Check Inbox for Email verification",
+  "emailVerified": "Email verification successful"
+}

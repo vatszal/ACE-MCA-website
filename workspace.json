@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "projects": {
+    "@ace/admin-table": {
+      "root": "packages/admintable",
+      "type": "library"
+    },
+    "@ace/common": {
+      "root": "packages/common",
+      "type": "library"
+    },
+    "@ace/functions": {
+      "root": "packages/functions",
+      "type": "library"
+    },
+    "@ace/website": {
+      "root": "packages/website",
+      "type": "library"
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "Main": {
+    "hero_section_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "hero section image"
+      }
+    },
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "title",
+        "placeholder": "Enter title for the upcoming event"
+      }
+    },
+    "date": {
+      "type": "Date",
+      "config": {
+        "label": "date",
+        "placeholder": "Enter the start date for the event"
+      }
+    },
+    "show_register_button": {
+      "type": "Boolean",
+      "config": {
+        "placeholder_false": "Register button will not be shown on page",
+        "placeholder_true": "Register button will be shown on page",
+        "default_value": false,
+        "label": "Show Register Button"
+      }
+    },
+    "registration_link": {
+      "type": "Link",
+      "config": {
+        "label": "Registration Link",
+        "placeholder": "Enter the link for event registration",
+        "select": null,
+        "allowTargetBlank": true
+      }
+    },
+    "registration_button_name": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph",
+        "allowTargetBlank": true,
+        "label": "Registration Button Name"
+      }
+    },
+    "info": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph",
+        "label": "info",
+        "placeholder": "Enter the info for upcoming event"
+      }
+    },
+    "list_title": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "heading3",
+        "label": "List Title",
+        "placeholder": "Enter the title for list created below"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {},
+        "choices": {
+          "magazine__card": {
+            "type": "Slice",
+            "fieldset": "Magazine  Card",
+            "description": "Magazine Info Card ",
+            "icon": "add_to_photos",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "magazine_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Magazine Image"
+                }
+              },
+              "magazine_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                  "label": "Magazine Title",
+                  "placeholder": "Enter the title for the Magazine"
+                }
+              },
+              "magazine_info": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph",
+                  "label": "Magazine Info",
+                  "placeholder": "Enter brief info about the Magazine"
+                }
+              },
+              "release_date": {
+                "type": "Date",
+                "config": {
+                  "label": "Release Date",
+                  "placeholder": "Enter the release date of Magazine"
+                }
+              },
+              "magazine_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Magazine Link",
+                  "placeholder": "Enter the link for the Magazine",
+                  "select": null
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
