@@ -45,7 +45,8 @@ module.exports = {
           layout: require('./src/schemas/Layout.json'),
           members: require('./src/schemas/Members.json'),
           projects: require('./src/schemas/Projects.json'),
-          achievements: require('./src/schemas/Achievements.json'),
+          achievements: require('./src/schemas/Achievements.json'), // ✅ UNCOMMENT this!
+          achievement: {},
           eventpage: require('./src/schemas/EventPage.json'),
           eventitem: require('./src/schemas/EventItem.json'),
           magazine: require('./src/schemas/Magazine.json'),
@@ -56,8 +57,6 @@ module.exports = {
           upcoming_event_page: require('./src/schemas/UpcomingEventPage.json'),
           hackathon: require('./src/schemas/Hackathon.json'),
         },
-        // customTypesApiToken: process.env.PRISMIC_CUSTOM_TYPES_API_TOKEN,
-        // linkResolver: doc => linkResolver(doc),
       },
     },
     {
