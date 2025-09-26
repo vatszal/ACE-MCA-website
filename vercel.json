@@ -1,4 +1,5 @@
 {
   "buildCommand": "yarn nx build @ace/website",
-  "outputDirectory": "packages/website/public"
+  "outputDirectory": "packages/website/public",
+  "installCommand": "yarn install"
 }
