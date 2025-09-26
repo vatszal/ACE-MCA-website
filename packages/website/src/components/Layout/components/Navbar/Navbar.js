@@ -163,16 +163,6 @@ export default function Navbar({
               </animated.div>
             )
           })}
-        {location.pathname?.includes('/register') && user && (
-          <Button
-            onClick={() => {
-              signOutUser(dispatch)
-              setToggleSlider(false)
-            }}
-            sm
-            value="Log Out"
-          />
-        )}
       </NavbarSlider>
       <NavbarVertical left>
         <NavbarVerticalContent>
