@@ -4,9 +4,14 @@ import { FlexCenter } from '../../styles/sharedStyles'
 
 export default function Loading({ loop = true, autoplay = true }) {
   const [isClient, setIsClient] = useState(false)
+  const [Lottie, setLottie] = useState(null)
   
   useEffect(() => {
     setIsClient(true)
+    // Dynamic import instead of require
+    import('react-lottie').then((LottieModule) => {
+      setLottie(() => LottieModule.default)
+    })
   }, [])
 
   const defaultOptions = {
@@ -18,15 +23,16 @@ export default function Loading({ loop = true, autoplay = true }) {
     }
   }
 
-  if (!isClient) {
+  if (!isClient || !Lottie) {
     return (
       <FlexCenter>
-        <div style={{ height: '200px', width: '200px' }}>Loading...</div>
+        <div style={{ height: '200px', width: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          Loading...
+        </div>
       </FlexCenter>
     )
   }
 
-  const Lottie = require('react-lottie')
   return (
     <FlexCenter>
       <Lottie options={defaultOptions} height={200} width={200} />
