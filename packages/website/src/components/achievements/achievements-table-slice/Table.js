@@ -12,11 +12,11 @@ const Table = ({ tableData, title, breakOn = 'medium' }) => {
   const [table, setTable] = useState(tableData)
   const [loading, setLoading] = useState(true)
 
+  // Simplified headers without winner name
   const tableHeader = [
     'Date',
-    filter !== 'Achievement' ? 'Name' : 'Winner Name',
-    filter === 'Achievement' ? 'Position' : false, // doing temp fix here because I didnt have time to refactor
-    filter !== 'Achievement' ? 'Position' : 'Event Name',
+    filter === 'Achievement' ? 'Position' : 'Position', // Simplified logic
+    'Event Name',
     filter !== 'Achievement' ? 'Company' : 'College Name'
   ]
 
@@ -72,27 +72,26 @@ const Table = ({ tableData, title, breakOn = 'medium' }) => {
             <TableContainerTable>
               <thead>
                 <Tr>
-                  {tableHeader.map((col, index) => { // doing temp fix here because I didnt have time to refactor
-                    return col && <th key={index}>{col}</th>
-                    })}
+                  {tableHeader.map((col, index) => (
+                    <th key={index}>{col}</th>
+                  ))}
                 </Tr>
               </thead>
               <tbody>
                 {table?.map(
                   ({
                     event_date: eventDate,
-                    winner_name: winnerName,
                     position,
                     event_name: eventName,
-                    college_name: collegeName
+                    college_name: collegeName,
+                    achievement_title: achievementTitle
                   }) => {
                     return (
-                      <Tr key={eventDate + winnerName}>
+                      <Tr key={`${eventDate}-${achievementTitle?.text || eventName?.text}`}>
                         <Td>{eventDate}</Td>
-                        <Td>{winnerName?.document?.data?.member_name?.text}</Td>
-                        {filter === 'Achievement' && <Td>{position ?? '-'}</Td>}
-                        <Td>{eventName.text}</Td>
-                        <Td>{collegeName.text}</Td>
+                        <Td>{position ?? '-'}</Td>
+                        <Td>{eventName?.text || achievementTitle?.text}</Td>
+                        <Td>{collegeName?.text}</Td>
                       </Tr>
                     )
                   }
@@ -108,10 +107,9 @@ const Table = ({ tableData, title, breakOn = 'medium' }) => {
   )
 }
 
-Table.prototype = {
+Table.propTypes = {
   tableData: PropTypes.arrayOf(PropTypes.object).isRequired,
-  headingColumns: PropTypes.arrayOf(PropTypes.string).isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   breakOn: PropTypes.oneOf(['small', 'medium', 'large'])
 }
 
