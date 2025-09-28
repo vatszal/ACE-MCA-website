@@ -140,7 +140,7 @@ export default function MembersPage({ data }) {
       <FlexCenter style={{ marginTop: '1rem' }}>
         <Heading>Faculty Coordinators</Heading>
       </FlexCenter>
-      <MembersSort startingYear={2017} setYear={e => setYearFaculty(e)} />
+      <MembersSort startingYear={2023} setYear={e => setYearFaculty(e)} />
       {!loadingFaculty ? (
         <>
           <FlexCenter style={{ flexWrap: 'wrap' }}>
@@ -216,7 +216,7 @@ export default function MembersPage({ data }) {
       <FlexCenter>
         <Heading>Our Members</Heading>
       </FlexCenter>
-      <MembersSort startingYear={2017} setYear={e => setYearMembers(e)} />
+      <MembersSort startingYear={2023} setYear={e => setYearMembers(e)} />
       {!loadingMembers ? (
         <FlexCenter style={{ flexWrap: 'wrap' }}>
           {members?.map((e, key) => {
